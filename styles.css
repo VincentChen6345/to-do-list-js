@@ -1,0 +1,112 @@
+:root {
+  --color-primary: rgb(26, 147, 169);
+  --color-primary-light: rgb(28, 160, 184);
+
+  --border-color: rgb(187, 187, 187);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.main-container {
+  width: 70%;
+}
+h1 {
+  margin-top: 40px;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+/*////////////////////////*/
+/*add task section styling*/
+.addTask-container {
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  font-size: 20px;
+
+  border-radius: 5px;
+}
+.fa-solid {
+  width: 20px;
+  height: 20px;
+  padding: 12px;
+  background-color: var(--color-primary);
+  color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.input-span {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.task-input-field {
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  flex-grow: 1;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-right: 15px;
+}
+.priority-span {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 3px 7px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+.priority-dropdown {
+  font-size: 17px;
+  padding: 3px;
+  margin-left: 7px;
+  border-radius: 5px;
+
+  border: 1px solid var(--border-color);
+}
+.addtask-btn {
+  padding: 10px 0;
+  width: 100%;
+  font-size: 20px;
+}
+
+.addtask-btn {
+  border-style: none;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
+}
+.addtask-btn:hover {
+  background-color: var(--color-primary-light);
+}
+/*///////////////*/
+/*task lisk container*/
+.taskList-container {
+  margin-top: 20px;
+}
+
+.default-content {
+  font-size: 20px;
+}

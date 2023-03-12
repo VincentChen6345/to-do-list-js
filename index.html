@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script
+      src="https://kit.fontawesome.com/bd278545d3.js"
+      crossorigin="anonymous"
+    ></script>
+    <div class="main-container">
+      <h1>To-Do List</h1>
+      <section class="addTask-container">
+        <form class="input-container">
+          <span class="input-span">
+            <i class="fa-solid fa-list"></i
+            ><input
+              type="text"
+              class="task-input-field"
+              placeholder="Add Task"
+            />
+          </span>
+
+          <span class="priority-span"
+            >Priority
+            <select
+              name="priority-dropdown"
+              id="priority-dropdown"
+              class="priority-dropdown"
+            >
+              <option value="high">high</option>
+              <option value="medium">medium</option>
+              <option value="low">low</option>
+            </select>
+          </span>
+        </form>
+        <button type="submit" id="addtask-btn" class="addtask-btn">
+          Add new task
+        </button>
+      </section>
+      <section class="taskList-container" id="taskList-container">
+        <p class="default-content">
+          No tasks yet? Create a task to get started!
+        </p>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -14,10 +14,10 @@
     ></script>
     <div class="main-container">
       <h1>To-Do List</h1>
-      <section class="addTask-container">
+      <section class="addTask-container border">
         <form class="input-container">
           <span class="input-span">
-            <i class="fa-solid fa-list"></i
+            <i class="fa-solid fa-list list-svg"></i
             ><input
               type="text"
               class="task-input-field"
@@ -25,12 +25,12 @@
             />
           </span>
 
-          <span class="priority-span"
+          <span class="priority-span border"
             >Priority
             <select
               name="priority-dropdown"
               id="priority-dropdown"
-              class="priority-dropdown"
+              class="priority-dropdown border"
             >
               <option value="high">high</option>
               <option value="medium">medium</option>
@@ -38,14 +38,31 @@
             </select>
           </span>
         </form>
-        <button type="submit" id="addtask-btn" class="addtask-btn">
+        <button type="submit" id="addtask-btn" class="addtask-btn border">
           Add new task
         </button>
       </section>
       <section class="taskList-container" id="taskList-container">
-        <p class="default-content">
+        <!-- <p class="default-content">
           No tasks yet? Create a task to get started!
-        </p>
+        </p> -->
+        <div class="task-item border">
+          <p class="task-item_text" id="task-item_text">Coding</p>
+          <span class="priority-box-red">High</span>
+          <input
+            type="checkbox"
+            name="complete"
+            id="complete-checkbox"
+            class="complete-checkbox"
+            onclick="check()"
+          />
+          <button class="svg-button">
+            <i class="fa-regular fa-pen-to-square pen svg"></i>
+          </button>
+          <button class="svg-button">
+            <i class="fa-solid fa-trash-can trash svg"></i>
+          </button>
+        </div>
       </section>
     </div>
     <script src="script.js"></script>

@@ -20,6 +20,7 @@
             <i class="fa-solid fa-list list-svg"></i
             ><input
               type="text"
+              id="taskText"
               class="task-input-field"
               placeholder="Add Task"
             />
@@ -48,14 +49,8 @@
         </p> -->
         <div class="task-item border">
           <p class="task-item_text" id="task-item_text">Coding</p>
-          <span class="priority-box-red">High</span>
-          <input
-            type="checkbox"
-            name="complete"
-            id="complete-checkbox"
-            class="complete-checkbox"
-            onclick="check()"
-          />
+          <span class="priority-box high">High</span>
+          <input type="checkbox" class="complete-checkbox" onclick="check()" />
           <button class="svg-button">
             <i class="fa-regular fa-pen-to-square pen svg"></i>
           </button>

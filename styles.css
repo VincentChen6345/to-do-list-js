@@ -5,7 +5,8 @@
   --border-color: rgb(187, 187, 187);
   --color-tertiary: rgb(227, 172, 0);
   --color-secondary: rgb(208, 28, 54);
-
+  --priority-low:green
+ 
   --priority-high: rgb(240, 139, 154);
 }
 * {
@@ -144,8 +145,16 @@ h1 {
   margin-right: 15px;
   margin-left: 25px;
 }
-.priority-box-red {
+.priority-box {
   padding: 10px 25px;
-  border: solid 3px var(--priority-high);
   font-size: 15px;
+}
+.high {
+  border: solid 3px rgb(240, 139, 154);
+}
+.medium {
+  border: solid 3px var(--color-tertiary);
+}
+.low {
+  border: solid 3px green;
 }

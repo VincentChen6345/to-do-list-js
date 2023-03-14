@@ -36,8 +36,8 @@ h1 {
 /*add task section styling*/
 .addTask-container {
   padding: 20px;
-
   font-size: 20px;
+ 
 }
 .list-svg {
   padding: 12px;
@@ -99,6 +99,7 @@ h1 {
 /*task lisk container*/
 .taskList-container {
   margin-top: 20px;
+
 }
 
 .default-content {
@@ -114,6 +115,7 @@ h1 {
   padding: 10px 20px;
   font-size: 20px;
   align-items: center;
+  margin-bottom: 20px;
 }
 .task-item_text {
   margin-right: auto;

@@ -2,6 +2,7 @@ const taskList = document.getElementById("taskList-container");
 const addTaskBTN = document.getElementById("addtask-btn");
 const taskText = document.getElementById("task-item_text");
 const selectDropdown = document.getElementById("priority-dropdown");
+const defaultContent = document.getElementById("default-content");
 let taskListArray = [];
 let newItemObject = {};
 //when add task btn is clicked
@@ -77,7 +78,7 @@ const renderTaskList = () => {
 const clickHandler = (e) => {
   e.preventDefault();
   //extract string from input
-  taskList.innerHTML = "";
+  defaultContent.remove();
   const inputTextField = document.getElementById("taskText");
 
   newItemObject.text = inputTextField.value;

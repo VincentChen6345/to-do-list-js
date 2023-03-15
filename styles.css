@@ -117,9 +117,20 @@ h1 {
   align-items: center;
   margin-bottom: 20px;
 }
+.task-item_span{
+    margin-right: auto;
+}
 .task-item_text {
-  margin-right: auto;
-  margin-left: 30px;
+
+  padding-left: 30px;
+  width: 100%;
+  text-align: left;
+}
+.edit-text{
+  border: solid 2px var(--color-tertiary);
+}
+[contenteditable]{
+  outline:0px solid transparent;
 }
 .strikethrough {
   text-decoration: line-through;
@@ -150,6 +161,7 @@ h1 {
 .priority-box {
   padding: 10px 25px;
   font-size: 15px;
+  margin-left: 20px;
 }
 .high {
   border: solid 3px rgb(240, 139, 154);

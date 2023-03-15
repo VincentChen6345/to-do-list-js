@@ -1,6 +1,6 @@
 const taskList = document.getElementById("taskList-container");
 const addTaskBTN = document.getElementById("addtask-btn");
-const taskText = document.getElementById("task-item_text");
+
 const selectDropdown = document.getElementById("priority-dropdown");
 const defaultContent = document.getElementById("default-content");
 let taskListArray = [];
@@ -17,20 +17,28 @@ const renderTaskList = () => {
   //   taskListArray.map((obj) => {
   //div element
   let newItem = document.createElement("div");
-  newItem.classList.add("task-item");
-  newItem.classList.add("border");
+  let newItemClasses = ["task-item", "border"];
+  newItemClasses.forEach((className) => {
+    newItem.classList.add(className);
+  });
 
+  //task paragraph span box
+  let textBox = document.createElement("span");
+  textBox.classList.add("task-item_span");
   //task paragraph string
   let itemText = document.createElement("p");
   itemText.classList.add("task-item_text");
+  itemText.id = "task-item_text";
   itemText.textContent = newObj.text;
+  textBox.appendChild(itemText);
 
   //priority box
   let priorityBox = document.createElement("span");
+  let priorityBoxClasses = [`${newObj.priority}`, `priority-box`];
   priorityBox.textContent = newObj.priority;
-  priorityBox.classList.add(`${newObj.priority}`);
-  priorityBox.classList.add(`priority-box`);
-  console.log(priorityBox);
+  priorityBoxClasses.forEach((className) => {
+    priorityBox.classList.add(className);
+  });
 
   //checkbox
   let checkbox = document.createElement("input");
@@ -44,12 +52,13 @@ const renderTaskList = () => {
   let penContainer = document.createElement("button");
   penContainer.classList.add("svg-button");
   let penSVG = document.createElement("i");
-  penSVG.classList.add("fa-regular");
-  penSVG.classList.add("fa-pen-to-square");
-  penSVG.classList.add("pen");
-  penSVG.classList.add("svg");
+  let penSVGClasses = ["fa-regular", "fa-pen-to-square", "pen", "svg"];
+  penSVGClasses.forEach((className) => {
+    penSVG.classList.add(className);
+  });
   penSVG.addEventListener("click", () => {
-    newItem.setAttribute("contenteditable", "true");
+    textBox.setAttribute("contenteditable", "true");
+    textBox.classList.add("edit-text");
   });
   penContainer.appendChild(penSVG);
 
@@ -57,21 +66,27 @@ const renderTaskList = () => {
   let trashContainer = document.createElement("button");
   trashContainer.classList.add("svg-button");
   let trashSVG = document.createElement("i");
-  trashSVG.classList.add("fa-regular");
-  trashSVG.classList.add("fa-trash-can");
-  trashSVG.classList.add("trash");
-  trashSVG.classList.add("svg");
+  let trashSVGClasses = ["fa-regular", "fa-trash-can", "trash", "svg"];
+  trashSVGClasses.forEach((className) => {
+    trashSVG.classList.add(className);
+  });
   trashSVG.addEventListener("click", () => {
     newItem.remove();
   });
   trashContainer.appendChild(trashSVG);
 
   //appending all child items
-  newItem.appendChild(itemText);
-  newItem.appendChild(priorityBox);
-  newItem.appendChild(checkbox);
-  newItem.appendChild(penContainer);
-  newItem.appendChild(trashContainer);
+  let childElements = [
+    textBox,
+    priorityBox,
+    checkbox,
+    penContainer,
+    trashContainer,
+  ];
+  childElements.forEach((el) => {
+    newItem.appendChild(el);
+  });
+
   taskList.appendChild(newItem);
   //   }
 };
@@ -97,4 +112,4 @@ const clickHandler = (e) => {
 
 addTaskBTN.addEventListener("click", clickHandler);
 
-//create default content when there are no todos on load and if the array is empty, display the default content
+//fix border bug when you click on the edit button.

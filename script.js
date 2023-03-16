@@ -5,8 +5,6 @@ const selectDropdown = document.getElementById("priority-dropdown");
 const defaultContent = document.getElementById("default-content");
 let taskListArray = [];
 let newItemObject = {};
-//when add task btn is clicked
-//create new list element, extract string from input field, extract priority from select dropdown , place list element in an array
 
 const check = () => {
   itemText.classList.toggle("strikethrough");
@@ -25,6 +23,7 @@ const renderTaskList = () => {
   //task paragraph span box
   let textBox = document.createElement("span");
   textBox.classList.add("task-item_span");
+  textBox.id = "task-item_span";
   //task paragraph string
   let itemText = document.createElement("p");
   itemText.classList.add("task-item_text");
@@ -109,7 +108,19 @@ const clickHandler = (e) => {
   //add that object to the array
   //loop through the array and create
 };
+const stopEdit = (e) => {
+  console.log(e.target);
+  if (
+    !e.target.classList.contains("svg") &&
+    !e.target.classList.contains("task-item_text")
+  ) {
+    console.log("fired");
 
+    const textBoxSpan = document.getElementById("task-item_span");
+    console.log(textBoxSpan);
+    textBoxSpan.classList.remove("edit-text");
+  }
+};
 addTaskBTN.addEventListener("click", clickHandler);
-
+window.addEventListener("click", stopEdit);
 //fix border bug when you click on the edit button.

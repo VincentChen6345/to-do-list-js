@@ -119,6 +119,7 @@ h1 {
 }
 .task-item_span{
     margin-right: auto;
+    width: 100%;
 }
 .task-item_text {
 
